@@ -1,23 +1,30 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'materias.dart';
 
 void main() {
-  runApp(new App());
+  runApp(App());
 }
 
-class App extends StatelessWidget {
- String texto = " ";
+class App extends StatefulWidget {
+  const App({super.key});
 
   @override
+  State<App> createState() => _App();
+}
+
+class _App extends State<App> {
+  @override
   Widget build(BuildContext context) {
-    String texto = "Olá";
+    // String texto = "Olá";
     return MaterialApp(
       home: Scaffold(
         // HEADER APP BAR
         appBar: AppBar(
           backgroundColor: Color(0xFF00A4BA),
           title: Row(children: [
-            Image.asset('lib/icons/logo.png'),
+            Image.asset('lib/assets/icons/logo.png'),
             // Padding(padding: padding)
             SizedBox(width: 5),
             Text(
@@ -32,11 +39,11 @@ class App extends StatelessWidget {
           centerTitle: true,
           iconTheme: IconThemeData(
             color: Color(0xFF292D32),
-            size: 90,
+            size: 36,
           ),
           actions: [
             IconButton(
-              icon: Image.asset('lib/icons/menu-home.png'),
+              icon: Image.asset('lib/assets/icons/menu-home.png'),
               color: Color(0xFF292D32),
               onPressed: () {},
             ),
@@ -58,10 +65,14 @@ class App extends StatelessWidget {
           // padding: EdgeInsets.all(25),
           child: FloatingActionButton(
             backgroundColor: Color(0xFF292D32),
-            child: Image.asset('lib/icons/button-floating.png'),
+            child: Image.asset('lib/assets/icons/button-floating.png'),
             onPressed: () {
-
-            }
+              // Navigator.of(context).push(
+              //   MaterialPageRoute(
+              //     builder: (context) => _selectCategory(context),
+              //   ),
+              // );
+            },
           ),
         ),
       ),
