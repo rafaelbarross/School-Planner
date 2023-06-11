@@ -2,16 +2,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'materia.dart';
+import 'package:school_planner/components/show_dialog/show_dialog.dart';
 import '../screens/materia.dart';
 import '../components/listOfMaterias/list_materia.dart';
 
 void main() {
-  runApp(const MaterialApp(home: App()));
+  runApp(MaterialApp(home: App()));
 }
 
 class App extends StatefulWidget {
-  const App({super.key});
+  const App({Key? key}) : super(key: key);
 
   @override
   State<App> createState() => _App();
@@ -20,27 +20,23 @@ class App extends StatefulWidget {
 class _App extends State<App> {
   @override
   Widget build(BuildContext context) {
-    // String texto = "Olá";
     return MaterialApp(
       home: Scaffold(
-        // HEADER APP BAR
         appBar: AppBar(
-          // toolbarHeight: 86,
           backgroundColor: const Color(0xFF00A4BA),
           title: Row(
             children: [
-            Image.asset('lib/assets/icons/SchoolPlanner.png'),
-            // Padding(padding: padding)
-            const SizedBox(width: 10),
-            Text(
-              "School Planner",
-              style: GoogleFonts.inter(
-                fontSize: 29,
-                
-                color: const Color(0xFF292D32),
+              Image.asset('lib/assets/icons/SchoolPlanner.png'),
+              const SizedBox(width: 10),
+              Text(
+                "School Planner",
+                style: GoogleFonts.inter(
+                  fontSize: 29,
+                  color: const Color(0xFF292D32),
+                ),
               ),
-            ),
-          ]),
+            ],
+          ),
           centerTitle: true,
           iconTheme: const IconThemeData(
             color: Color(0xFF292D32),
@@ -62,29 +58,15 @@ class _App extends State<App> {
               children: [
                 ListMateria(),
                 const SizedBox(height: 15),
-              
-                
               ],
             ),
           ),
         ),
-
-        // body: Center(
-        //   child: Text(
-        //     "Adicione matérias\nno botão",
-        //     style: TextStyle(
-        //       fontSize: 29,
-        //       color: Color.fromRGBO(0, 0, 0, 0.25),
-        //     ),
-        //   ),
-        // ),
-floatingActionButton: Container(
+        floatingActionButton: Container(
           height: 65,
           width: 65,
-          // margin: EdgeInsets.only(bottom: 100, right: 40),
-          // padding: EdgeInsets.all(25),
           child: FloatingActionButton(
-            backgroundColor: Color(0xFF292D32),
+            backgroundColor: const Color(0xFF292D32),
             child: Image.asset('lib/assets/icons/button-floating.png'),
             onPressed: () {
               showDialog(
