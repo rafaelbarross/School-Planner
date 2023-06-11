@@ -78,7 +78,7 @@ class _App extends State<App> {
         //     ),
         //   ),
         // ),
-        floatingActionButton: Container(
+floatingActionButton: Container(
           height: 65,
           width: 65,
           // margin: EdgeInsets.only(bottom: 100, right: 40),
@@ -86,13 +86,13 @@ class _App extends State<App> {
           child: FloatingActionButton(
             backgroundColor: Color(0xFF292D32),
             child: Image.asset('lib/assets/icons/button-floating.png'),
-        
             onPressed: () {
-              // Navigator.of(context).push(
-              //   MaterialPageRoute(
-              //     builder: (context) => _selectCategory(context),
-              //   ),
-              // );
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return CustomDialog();
+                },
+              );
             },
           ),
         ),
