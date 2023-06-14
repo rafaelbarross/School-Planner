@@ -5,6 +5,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import '../components/listOfMaterias/list_materia.dart';
 import '../components/show_dialog/show_dialog.dart';
 import '../screens/materia.dart';
+import 'calendario.dart';
 import 'materia.dart';
 
 void main() {
@@ -35,8 +36,9 @@ class _App extends State<App> {
             Text(
               "School Planner",
               style: GoogleFonts.inter(
-                fontSize: 29,
+                fontSize: 25,
                 color: const Color(0xFF292D32),
+                fontWeight: FontWeight.bold,
               ),
             ),
           ]),
@@ -48,9 +50,14 @@ class _App extends State<App> {
           actions: [
             IconButton(
               alignment: Alignment.centerRight,
-              icon: Image.asset('lib/assets/icons/menu-home.png'),
+              icon: Image.asset('lib/assets/icons/calendar.png'),
               color: const Color(0xFF292D32),
-              onPressed: () {},
+              onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Calendar()),
+                ),
+              },
             ),
           ],
         ),
