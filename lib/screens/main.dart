@@ -2,9 +2,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'materia.dart';
-import '../screens/materia.dart';
 import '../components/listOfMaterias/list_materia.dart';
+import '../components/show_dialog/show_dialog.dart';
+import '../screens/materia.dart';
+import 'materia.dart';
 
 void main() {
   runApp(MaterialApp(home: App()));
